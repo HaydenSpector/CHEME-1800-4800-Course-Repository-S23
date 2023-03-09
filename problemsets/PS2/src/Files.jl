@@ -3,6 +3,7 @@
     read_compounds_file(path::String) -> Dict{String, MyChemicalCompoundModel}
 
 TODO: Describe what this function is doing, the args and the what is contained in the data that is returned.
+#It looks in the Compounds.data file and reads it. Then, it returns the list of compounds in the file.
 """
 function read_compounds_file(path::String)::Dict{String, MyChemicalCompoundModel}
     
@@ -16,7 +17,30 @@ function read_compounds_file(path::String)::Dict{String, MyChemicalCompoundModel
     # use example pattern from: https://varnerlab.github.io/CHEME-1800-Computing-Book/unit-1-basics/data-file-io.html#program-read-a-csv-file-refactored
     open(path, "r") do io # open a stream to the file
         for line in eachline(io) # read each line from the stream
-            
+               
+            # split the line around the delim -
+               fields = split(line, delim);
+               if (counter == 0)
+                   
+                   # package the hedaer -
+                   for value in fields
+                       push!(header, value)
+                   end
+   
+                   # update the counter -
+                   counter = counter + 1
+               else
+   
+                   # package -
+                   tmp = Array{Float64,1}()
+                   keyfield = fields[keyindex]
+                   for (i,value) in enumerate(fields)
+                       if (i != keyindex)
+                           push!(tmp, parse(Float64,value))
+                       end
+                   end
+                   data[keyfield] = tmp;
+               end
 
             # TODO: Implement the logid to process the records in the Test.data file
             # line is a line from the file  
