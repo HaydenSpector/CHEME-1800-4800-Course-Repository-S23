@@ -52,7 +52,7 @@ end
 
 TODO: Describe what this function does, the args and what we expect it to return 
 """
-function recursive_compound_parser(compounds::Dict{String, MyChemicalCompoundModel})::Dict{String, MyChemicalCompoundModel}
+function recursive_reaction_parser(string::String; 
     delim::Char=' ')::Dict{Int64,String}
 
     # initialize -
@@ -71,24 +71,12 @@ function recursive_compound_parser(compounds::Dict{String, MyChemicalCompoundMod
     # recursive descent -
     _recursive_reaction_parser(q, tmp, a; delim = delim);
 
-    # TODO: Implement a function that computes a composition dictionary of type Dict{Char,Int} for each of the compounds in the compounds dictionary
-    #
-    # Composition dictionary:
-    # The composition dictionary will hold the elements of the compounds as Chars 
-    # The number of each element will be the value held in the composition dictionary
-
-    # the parsering logic should be written in the _recursive_compound_parser function.
-
-    # This function should return the updated instances of the MyChemicalCompoundModel types holding the composition dictionary in the 
-    # the composition field.
-
-    # process each compound
-    for (name, compound) ∈ compounds
+    # convert to dictionary for the output
+    for item ∈ a
         d[counter] = item;
         counter += 1
-        # TODO: Implement me
     end
 
-    # return the updated dictionary
-    return compounds;
+    # return -
+    return d
 end
