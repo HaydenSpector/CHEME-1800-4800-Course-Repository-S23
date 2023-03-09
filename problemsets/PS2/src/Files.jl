@@ -7,7 +7,7 @@ TODO: Describe what this function is doing, the args and the what is contained i
 """
 function read_compounds_file(path::String)::Dict{String, MyChemicalCompoundModel}
     
-    # check: is path legit?
+    # check: is path legit??
     # in production we would check this path, assume ok for now
 
     # initialize -
