@@ -8,4 +8,4 @@ path_to_compounds_file = joinpath(_PATH_TO_DATA, "Compounds.data")
 compounds = read_compounds_file(path_to_compounds_file);
 
 # Step 3: process each of the compounds, compute the composition dictionary and update the compound models
-compounds = recursive_compound_parser(compounds);
+compounds = _recursive_compound_parser(compounds);
