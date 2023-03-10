@@ -1,7 +1,7 @@
 # include the Include.jl -
 include("Include.jl")
 
-# Step 1: load the reaction file 
+# Step 1: load the compound file 
 path_to_compounds_file = joinpath(_PATH_TO_DATA, "Compounds.data")
 
 # Step 2: parse the list of chemical compounds records in Compounds.data

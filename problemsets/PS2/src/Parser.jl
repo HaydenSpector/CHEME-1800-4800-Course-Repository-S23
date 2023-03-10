@@ -43,7 +43,7 @@ function recursive_compound_parser()
         end
 
         # process the next character in the queue -
-        _recursive_reaction_parser(q, tmp, a; delim = delim);
+        recursive_compound_parser(q, tmp, a; delim = delim);
     end
 end
 
@@ -68,14 +68,13 @@ function recursive_compound_parser(string::String;
         enqueue!(q, c);
     end
 
-    # recursive descent -
-    recursive_compound_parser(q, tmp, a; delim = delim);
-
     # convert to dictionary for the output
     for item ∈ a
         d[counter] = item;
         counter += 1
     end
+    # process the next character in the queue -
+    recursive_compound_parser(q, tmp, a; delim = delim);
 
     # return -
     return d
