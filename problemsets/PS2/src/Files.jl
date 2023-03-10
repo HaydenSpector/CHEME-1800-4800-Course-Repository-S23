@@ -5,6 +5,7 @@
 TODO: Describe what this function is doing, the args and the what is contained in the data that is returned.
 #It looks in the Compounds.data file and reads it. Then, it returns the list of compounds in the file.
 """
+
 function read_compounds_file(path::String)::Dict{String, MyChemicalCompoundModel}
     
         # check: is path legit?
@@ -24,10 +25,10 @@ function read_compounds_file(path::String)::Dict{String, MyChemicalCompoundModel
     
                     # grab the fields -
                     name = string(fields[1]);
-                    formula = string(fields[2]);
+                    compound = string(fields[2]);
                     
                     # build - 
-                    model = build(MyChemicalCompoundModel, name, formula);
+                    model = build(MyChemicalCompoundModel, name, compound);
     
                     # store -
                     compounds[name] = model;
@@ -37,5 +38,4 @@ function read_compounds_file(path::String)::Dict{String, MyChemicalCompoundModel
     end
 
     # return -
-    return compounds;
-end
+    return compound;
