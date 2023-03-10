@@ -52,7 +52,7 @@ end
 
 TODO: Describe what this function does, the args and what we expect it to return 
 """
-function recursive_reaction_parser(string::String; 
+function recursive_compound_parser(string::String; 
     delim::Char=' ')::Dict{Int64,String}
 
     # initialize -
@@ -69,7 +69,7 @@ function recursive_reaction_parser(string::String;
     end
 
     # recursive descent -
-    _recursive_reaction_parser(q, tmp, a; delim = delim);
+    _recursive_compound_parser(q, tmp, a; delim = delim);
 
     # convert to dictionary for the output
     for item ∈ a
