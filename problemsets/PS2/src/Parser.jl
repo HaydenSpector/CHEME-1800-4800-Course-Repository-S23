@@ -1,9 +1,9 @@
 """
-    _recursive_compound_parser()
+    recursive_compound_parser()
 
 TODO: Describe what this function does, the args and what we expect it to return
 """
-function _recursive_compound_parser()
+function recursive_compound_parser()
     # TODO: Implement me
      # base case: we have no more characters in the character_arr - we are done
      if (isempty(q) == true)
@@ -69,7 +69,7 @@ function recursive_compound_parser(string::String;
     end
 
     # recursive descent -
-    _recursive_compound_parser(q, tmp, a; delim = delim);
+    recursive_compound_parser(q, tmp, a; delim = delim);
 
     # convert to dictionary for the output
     for item ∈ a
