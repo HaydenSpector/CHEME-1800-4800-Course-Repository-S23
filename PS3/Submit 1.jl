@@ -5,3 +5,8 @@ h=0.1
 N=200
 k=1.0
 model=build(MyChemicalDecayModel, N=N, h=h,κ=k,Cₒ=Cₒ)
+
+A = model.A
+B = model.b
+
+x_gs = 
