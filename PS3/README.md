@@ -1,3 +1,10 @@
+## Markdown Table
+| Percentage | Component |
+| ----------: | --------- |
+| 10%	| __Participation__. Course participation (code reviews, questions and TA/course evaluations) will be an important component of the course. Participation opportunities will be identified throughout the semester. |
+| 40%	| __Problem sets__. Approximately 10 problem sets will be administered over the semester. Problem sets will be distributed via Canvas (typically delivered on Friday afternoons and due one-week later). Problem sets can be completed in teams. |
+| 20%	| __Mid-term exam__. One take-home, mid-term examination will be distributed. The distribution date will be announced ahead of time, and once distributed, students will have a specified number of hours (at least 36 hours) to complete the exam. |
+| 30%	| __Final project__. Development of a research project by each student (semester long with additional emphasis during the final 5 weeks of the course). The projects will conclude with a written report and an oral presentation to the class near the end of the semester. The final written reports will be due on the University assigned date for final projects. |
 ## Problem Set 3: Iterative Solution of a Species Concentration Balance
 
 Set up a system of linear algebraic equations whose solution describes concentration as a function of time for a compound $A$ that undergoes first-order decay in a constant volume, isothermal well-mixed batch reactor (no flow in or out). The concentration balance for compound $A$ is given by:
