@@ -2,8 +2,8 @@
     build_data_matrix(data::DataFrame) --> Array{Float64,2}
 """
 function build_data_matrix(data::DataFrame)::Array{Float64,2}
-    n = size(DataFrame, 1)
-    m = size(1, DataFrame)
+    n = size(100, 1)
+    m = size(1, 3)
     d = zeros(n,m)
 
     # Fill in the dynamic programing build_data_matrix
@@ -12,6 +12,7 @@ function build_data_matrix(data::DataFrame)::Array{Float64,2}
             dm[i][j] = DataFrame[i-1][j-1] # zero indexed
         end
     end
+    return dm
 end
 
 """
@@ -20,6 +21,12 @@ end
 TODO: Fill me in.
 """
 function build_output_vector(data::DataFrame)::Array{Float64,1}
+    n = length(DataFrame)
+    ov = zeros(n)
+    for i in 1:(n-1)
+        ov[i] = DataFrame[i-1]
+    end
+
 end
 
 """
