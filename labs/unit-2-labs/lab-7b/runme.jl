@@ -14,4 +14,5 @@ S = model.S;
 S̄ = binary(S);
 
 # compute the MAM
-MAM = S̄*transpose(S̄);
+P = S̄*transpose(S̄);
+MAM =  P - Matrix(Diagonal(diag(P)))
