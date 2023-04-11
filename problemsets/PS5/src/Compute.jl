@@ -26,7 +26,7 @@ function build_output_vector(data::DataFrame)::Array{Float64,1}
     for i in 1:n
         ov[i, 1] = data[i, 1]
     end
-    
+
     return ov
 end
 
@@ -38,8 +38,8 @@ Fill me in.
 function build_error_distribution(residuals::Array{Float64,1})::Normal
 
     # initialize -
-    μ = 0.0; # default value, replace with your value
-    σ = 0.0; # default value, replace with your value
+    μ = 1.0;
+    σ = 2.0;
 
     # return -
     return Normal(μ, σ);
